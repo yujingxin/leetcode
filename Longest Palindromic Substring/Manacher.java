@@ -1,16 +1,6 @@
 import java.util.ArrayList;
-
-// Manacher algorithm
-public class LongestParlindrome {
-		public static void main(String[] Args) {
-			String s = "babad";
-			String m = manacherTrans(s);
-			String a = longestPalindrome(m);
-			System.out.println(a);
-			
-		}
-		
-		private static String manacherTrans(String s) {
+class Solution{
+    private static String manacherTrans(String s) {
 			ArrayList trans = new ArrayList();
 			String[] a = s.split("");
 			trans.add("#");
@@ -23,7 +13,8 @@ public class LongestParlindrome {
 			
 		}
 		
-		public static  String longestPalindrome(String s) {
+		public static  String longestPalindrome(String m) {
+			String s = manacherTrans(m);
 			int count = 0, center = 0, radi = 0;
 			
 			for (int i = 0; i < s.length(); i++) {
@@ -43,3 +34,5 @@ public class LongestParlindrome {
 			
 	}
 }
+    
+    
